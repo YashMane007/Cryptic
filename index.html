@@ -168,21 +168,22 @@
 
     <!-- Sort options -->
     <div>
+      <input type="text" id="searchInput" placeholder="Search by coin symbol" oninput="sortAndFilter()">
+      
+      <div class="spacer-20"></div> <!-- Spacer div -->
       <select id="sortSelect" onchange="sortAndFilter()">
-        <optiond>Sort</option>
+        <option>Sort</option>
         <option value="alphabetical">Alphabetical (A-Z)</option>
         <option value="alphabeticalDesc">Alphabetical (Z-A)</option>
         <option value="priceAsc">Price (Low to High)</option>
         <option value="priceDesc">Price (High to Low)</option>
       </select>
-      <div class="spacer-20"></div> <!-- Spacer div -->
-      <input type="text" id="searchInput" placeholder="Search by coin symbol" oninput="sortAndFilter()">
     </div>
     <br>
     <!-- Display saved coins -->
     <div id="cryptoPrices"></div>
   </div>
-
+  
   <script>
     let savedCoins = JSON.parse(localStorage.getItem('savedCoins')) || [];
 
